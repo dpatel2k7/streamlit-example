@@ -39,7 +39,7 @@ def get_recommendations(bmi, name, age, days_active):
             | Friday       | Whole grain pancakes with berries (fiber, vitamins)     | Turkey and vegetable stir-fry (protein, fiber)     | Baked cod with quinoa and broccoli (protein, fiber) | 30-minute yoga session                              |
             | Saturday     | Cottage cheese with pineapple (protein, vitamins)       | Grilled chicken Caesar salad (protein, vegetables) | Lentil chili with whole grain bread (protein, fiber) | 20-minute home workout (jumping jacks, lunges)     |
             | Sunday       | Whole grain toast with avocado and eggs (protein, fiber) | Quinoa and black bean salad (protein, fiber)      | Grilled salmon with asparagus and brown rice (protein, fiber) | Rest day                                             |""")
-        st.write("If you have dietary restrictions check this [link] out for a government approved list of substitutions.(https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf)")
+        st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
 
     elif 25 <= bmi < 30:
         st.write("You are <span style='font-size:20px;color:red'><strong>overweight</strong></span>. Focus on portion control, increase physical activity, and consume more whole foods.</span>.", unsafe_allow_html=True)
@@ -54,7 +54,7 @@ def get_recommendations(bmi, name, age, days_active):
             | Friday       | Scrambled eggs with vegetables (protein, fiber)       | Hummus and veggie wrap (fiber, protein)            | Baked cod with quinoa and broccoli (protein, fiber) | 30-minute swim or water aerobics                    |
             | Saturday     | Cottage cheese with berries (protein, fiber)          | Grilled chicken Caesar salad (protein, vegetables)  | Turkey chili with whole grain bread (protein, fiber) | 20-minute yoga session                              |
             | Sunday       | Whole grain pancakes with fruit (fiber, vitamins)     | Grilled vegetable stir-fry (fiber, vitamins)        | Lentil curry with brown rice (fiber, protein)       | Rest day                                             |""")
-        st.write("If you have dietary restrictions check this [link] out for a government approved list of substitutions.(https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf)")
+        st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
     
     else:
         st.write("You are <span style='font-size:20px;color:red'><strong>obese</strong></span>. Consult a healthcare professional for personalized advice and focus on gradual weight loss through diet and exercise</span>.", unsafe_allow_html=True)
@@ -69,5 +69,5 @@ def get_recommendations(bmi, name, age, days_active):
             | Friday       | Scrambled eggs with vegetables (protein, fiber)       | Hummus and veggie wrap (fiber, protein)            | Baked cod with quinoa and broccoli (protein, fiber) | 30-minute strength training with light weights                                |
             | Saturday     | Cottage cheese with berries (protein, fiber)          | Grilled chicken Caesar salad (protein, vegetables)  | Turkey chili with whole grain bread (protein, fiber) | 20-minute yoga session                              |
             | Sunday       | Whole grain pancakes with fruit (fiber, vitamins)     | Grilled vegetable stir-fry (fiber, vitamins)        | Lentil curry with brown rice (fiber, protein)       | Rest day                                             |""")
-        st.write("If you have dietary restrictions check this [link] out for a government approved list of substitutions.(https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf)")
+        st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
 
