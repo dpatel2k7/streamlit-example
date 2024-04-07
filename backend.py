@@ -24,7 +24,7 @@ def get_recommendations(bmi, name, age, days_active):
             | Friday       | Whole grain cereal with milk and fruits (fiber, vitamins) | Turkey and vegetable stir-fry (protein, fiber)  | Lentil curry with brown rice (fiber, protein)       | 30-minute bike ride                                 |
             | Saturday     | Cottage cheese with honey and nuts (protein, healthy fats) | Grilled vegetable and feta salad (fiber, protein) | Baked cod with quinoa and broccoli (protein, fiber) | 20-minute swim or water aerobics                   |
             | Sunday       | Pancakes with Greek yogurt and fruit (fiber, protein)  | Lentil soup with whole grain bread (fiber, protein) | Stir-fried tofu with vegetables and brown rice (protein, fiber) | Rest day                                             |""")
-        st.write("If you have dietary restrictions check this [link] out for a government approved list of substitutions.(https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf)")
+        st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
 
     elif 18.5 <= bmi < 25:
         st.write("You have a <span style='font-size:20px;color:red'><strong>normal weight</strong></span>. Keep maintaining a balanced diet and regular exercise routine.</span>.", unsafe_allow_html=True)

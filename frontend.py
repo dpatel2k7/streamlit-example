@@ -60,8 +60,7 @@ def display_bmi_result():
     age = st.session_state.age
     days_active = st.session_state.days_active
     recommendations = get_recommendations(bmi, name, age, days_active)
-    st.markdown("<h2 style='font-family: Times New Roman;'>You are underweight BMI. Consider consuming more calories and protein-rich foods.</h2>")
-    st.write(recommendations)
+    # st.write(recommendations)
 
     if st.button("Go to Home"):
         st.session_state.state = State.INPUT_FORM
