@@ -1,6 +1,9 @@
 
 import streamlit as st
 
+from backend import get_recommendations
+from backend import calculate_bmi
+
 class State:
     INPUT_FORM = "input_form"
     BMI_RESULT = "bmi_result"
@@ -11,8 +14,13 @@ def bmi_calculator():
     elif st.session_state.state == State.BMI_RESULT:
         display_bmi_result()
 
-def display_input_form():
+def display_input_form():    
     st.title("BMI Calculator")
+
+# Print the obesity plan chart
+    name = st.text_input("Enter your name:")
+    age = st.number_input("Enter your age:", min_value=0, max_value=150, step=1)
+    days_active = st.number_input("How many days per week do you typically stay active?", min_value=0, max_value=7, step=1)
 
     weight_lbs = st.number_input("Enter your weight (in lbs):", min_value=0.0, step=0.1)
     height_inches = st.number_input("Enter your height (in inches):", min_value=0.0, step=0.01)
@@ -32,29 +40,32 @@ def display_input_form():
             if st.button("Get Recommendations"):
                 recommendations = get_recommendations(bmi)
                 # st.session_state.recommendations = recommendations
+            # Initialize session state attributes
+            if "name" not in st.session_state:
+                st.session_state.name = ""
+
+            if "age" not in st.session_state:
+                st.session_state.age = 0
 
             st.session_state.bmi = bmi
+            st.session_state.name = name
+            st.session_state.age = age
+            st.session_state.days_active = days_active
             st.session_state.state = State.BMI_RESULT
 
 def display_bmi_result():
+    # Retrieve variables from session state
     bmi = st.session_state.bmi
-    recommendations = get_recommendations(bmi)
+    name = st.session_state.name  
+    age = st.session_state.age
+    days_active = st.session_state.days_active
+    recommendations = get_recommendations(bmi, name, age, days_active)
+    st.markdown("<h2 style='font-family: Times New Roman;'>You are underweight BMI. Consider consuming more calories and protein-rich foods.</h2>")
     st.write(recommendations)
+
+    if st.button("Go to Home"):
+        st.session_state.state = State.INPUT_FORM
     
-
-def calculate_bmi(weight_kg, height_meters):
-    return weight_kg / (height_meters ** 2)
-
-def get_recommendations(bmi):
-    if bmi < 18.5:
-        return "You are underweight. Consider consuming more calories and protein-rich foods."
-    elif 18.5 <= bmi < 25:
-        return "You have a normal weight. Keep maintaining a balanced diet and regular exercise routine."
-    elif 25 <= bmi < 30:
-        return "You are overweight. Focus on portion control, increase physical activity, and consume more whole foods."
-    else:
-        return "You are obese. Consult a healthcare professional for personalized advice and focus on gradual weight loss through diet and exercise."
-
 def main():
     if "state" not in st.session_state:
         st.session_state.state = State.INPUT_FORM
