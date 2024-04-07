@@ -15,7 +15,9 @@ def bmi_calculator():
         display_bmi_result()
 
 def display_input_form():    
-    st.title("BMI Calculator")
+    st.title("Fitness First")
+    st.write("Healthy Habits for Humanity")
+    bmi_chart = st.image("LogoPic.png", use_column_width=True)
 
 # Print the obesity plan chart
     name = st.text_input("Enter your name:")
@@ -37,7 +39,7 @@ def display_input_form():
             bmi = calculate_bmi(weight_kg, height_meters)
             st.write(f"Your BMI is: {bmi:.2f}")
 
-            if st.button("Get Recommendations"):
+            if st.button("Get a personalized performance plan"):
                 recommendations = get_recommendations(bmi)
                 # st.session_state.recommendations = recommendations
             # Initialize session state attributes

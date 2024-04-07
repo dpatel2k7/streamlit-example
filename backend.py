@@ -12,7 +12,8 @@ def get_recommendations(bmi, name, age, days_active):
 
     if bmi < 18.5:
         st.write(f"Hello {name}, you are {age} years old and you stay active {days_active} days per week.")
-        st.write("You are <span style='font-size:20px;color:red'><strong>underweight</strong></span>. Consider consuming more calories and protein-rich foods.</span>.", unsafe_allow_html=True)
+        st.write("According to BMI, you are <span style='font-size:20px;color:red'><strong>underweight</strong></span>. Consider consuming more calories and protein-rich foods.</span>.", unsafe_allow_html=True)
+        st.image("Underweight.png", use_column_width=True)
         st.write("We recommand you follow the meal plan suggested below.</span>", unsafe_allow_html=True)
         st.write("""
             | Day          | Meal 1                                                | Meal 2                                             | Meal 3                                               | Exercise                                             |
@@ -27,9 +28,11 @@ def get_recommendations(bmi, name, age, days_active):
         st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
 
     elif 18.5 <= bmi < 25:
-        st.write("You have a <span style='font-size:20px;color:red'><strong>normal weight</strong></span>. Keep maintaining a balanced diet and regular exercise routine.</span>.", unsafe_allow_html=True)
+        st.write(f"Hello {name}, you are {age} years old and you stay active {days_active} days per week.")
+        st.write("According to BMI, you have a <span style='font-size:20px;color:green'><strong>normal weight</strong></span>. Keep maintaining a balanced diet and regular exercise routine.</span>.", unsafe_allow_html=True)
+        st.image("Normal.png", use_column_width=True)
         st.write("We recommand you follow the meal plan suggested below.</span>", unsafe_allow_html=True)
-        st.write("""
+        st.write("""            
             | Day          | Meal 1                                                | Meal 2                                             | Meal 3                                               | Exercise                                             |
             |--------------|-------------------------------------------------------|-----------------------------------------------------|------------------------------------------------------|------------------------------------------------------|
             | Monday       | Scrambled eggs with whole grain toast (protein, fiber) | Grilled chicken salad (protein, vegetables)         | Baked salmon with quinoa and vegetables (protein, fiber) | 30-minute brisk walk                                 |
@@ -42,7 +45,9 @@ def get_recommendations(bmi, name, age, days_active):
         st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
 
     elif 25 <= bmi < 30:
-        st.write("You are <span style='font-size:20px;color:red'><strong>overweight</strong></span>. Focus on portion control, increase physical activity, and consume more whole foods.</span>.", unsafe_allow_html=True)
+        st.write(f"Hello {name}, you are {age} years old and you stay active {days_active} days per week.")
+        st.write("According to BMI, you are <span style='font-size:20px;color:red'><strong>overweight</strong></span>. Focus on portion control, increase physical activity, and consume more whole foods with high protien.</span>.", unsafe_allow_html=True)
+        st.image("Overweight.png", use_column_width=True)
         st.write("We recommand you follow the meal plan suggested below.</span>", unsafe_allow_html=True)
         st.write("""
             | Day          | Meal 1                                                | Meal 2                                             | Meal 3                                               | Exercise                                             |
@@ -57,7 +62,9 @@ def get_recommendations(bmi, name, age, days_active):
         st.write("If you have dietary restrictions check this [link](https://acl.gov/sites/default/files/nutrition/FoodSubstitutionList.pdf) out for a government approved list of substitutions.")
     
     else:
-        st.write("You are <span style='font-size:20px;color:red'><strong>obese</strong></span>. Consult a healthcare professional for personalized advice and focus on gradual weight loss through diet and exercise</span>.", unsafe_allow_html=True)
+        st.write(f"Hello {name}, you are {age} years old and you stay active {days_active} days per week.")
+        st.write("According to BMI, you are <span style='font-size:20px;color:red'><strong>obese</strong></span>. Focus on maintaining a caloric deficiet to achieve gradual weight loss through diet and exercise</span>.", unsafe_allow_html=True)
+        st.image("ObesePic.png", use_column_width=True)
         st.write("We recommand you follow the meal plan suggested below.</span>", unsafe_allow_html=True)
         st.write("""
             | Day          | Meal 1                                                | Meal 2                                             | Meal 3                                               | Exercise                                             |
