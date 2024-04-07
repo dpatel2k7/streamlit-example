@@ -15,9 +15,7 @@ def bmi_calculator():
         display_bmi_result()
 
 def display_input_form():    
-    st.title("Fitness First")
-    st.write("Healthy Habits for Humanity")
-    bmi_chart = st.image("LogoPic.png", use_column_width=True)
+    st.image("images/FitnessFirst-new.gif")
 
 # Print the obesity plan chart
     name = st.text_input("Enter your name:")
